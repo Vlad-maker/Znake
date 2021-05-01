@@ -15,25 +15,23 @@ let apple = {
   y: 220
 };
 
+const score = document.querySelector(".info__block")
+
 let keyUp = document.querySelector('.button__up')
 let keyDown = document.querySelector('.button__down')
 let keyRight = document.querySelector('.button__right')
 let keyLeft = document.querySelector('.button__left')
 
-//Генератор случайных чисел
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max-min)) + min;
 }
 
 function loop() {
-    // Дальше будет хитрая функция, которая замедляет скорость игры с 60 кадров в секунду до 15. Для этого она пропускает три кадра из четырёх, то есть срабатывает каждый четвёртый кадр игры. Было 60 кадров в секунду, станет 15.
     requestAnimationFrame(loop);
-    // Игровой код выполнится только один раз из четырёх, в этом и суть замедления кадров, а пока переменная count меньше четырёх, код выполняться не будет.
-    if (++count < 4) {
+    if (++count < 6) {
       return;
     }
     count = 0;
-    // Очищаем игровое поле
     context.clearRect(0, 0, canvas.width, canvas.height);
     snake.x += snake.dx;
     snake.y += snake.dy;
@@ -54,13 +52,15 @@ function loop() {
       snake.cells.pop();
     }
     
-    context.fillStyle = 'red';
+    context.fillStyle = 'yellow';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
-    context.fillStyle = 'green';
+    context.fillStyle = 'purple';
     snake.cells.forEach(function (cell, index) {
       context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
       if (cell.x === apple.x && cell.y === apple.y) {
         snake.maxCells++;
+        //Set Score
+        score.textContent = snake.maxCells * 3;
         apple.x = getRandomInt(0, 15) * grid;
         apple.y = getRandomInt(0, 15) * grid;
       }
@@ -81,47 +81,27 @@ function loop() {
   }
 
   keyLeft.addEventListener('click', function(event) {
+    if (snake.dx === 0) {
     snake.dx = -grid;
     snake.dy = 0;
-  })
+  }})
 
   keyUp.addEventListener('click', function(event) {
+    if (snake.dy === 0) {
     snake.dy = -grid;
     snake.dx = 0;
-  })
+  }})
 
   keyRight.addEventListener('click', function(event) {
+    if (snake.dx === 0) {
     snake.dx = grid;
     snake.dy = 0;
-  })
+  }})
 
   keyDown.addEventListener('click', function(event) {
+    if (snake.dy === 0) {
     snake.dy = grid;
     snake.dx = 0;
-  })
+  }})
 
   requestAnimationFrame(loop);
-
-  //        Управление с клавиатуры
-//   
-// document.addEventListener('keydown', function (e) {
-//     if (e.which === 37 && snake.dx === 0) {
-//       snake.dx = -grid;
-//       snake.dy = 0;
-//     }
-//     // Стрелка вверх
-//     else if (e.which === 38 && snake.dy === 0) {
-//       snake.dy = -grid;
-//       snake.dx = 0;
-//     }
-//     // Стрелка вправо
-//     else if (e.which === 39 && snake.dx === 0) {
-//       snake.dx = grid;
-//       snake.dy = 0;
-//     }
-//     // Стрелка вниз
-//     else if (e.which === 40 && snake.dy === 0) {
-//       snake.dy = grid;
-//       snake.dx = 0;
-//     }
-//   });

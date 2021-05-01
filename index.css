@@ -1,8 +1,8 @@
-/* div,h1, h2, h3, h4, p ,li, ul, img, section, article, main, header, body { 
+div,h1, h2, h3, h4, p ,li, ul, img, section, article, main, header, body { 
     outline-width: 1px; 
     outline-style: solid; 
     outline-color: red; 
-} */
+}
 
 .body {
     min-height: 100%;
@@ -21,7 +21,12 @@
 }
 
 .info__block {
+    
+}
+
+.score {
     min-height: 3vh;
+    padding-left: 13vw;
 }
 
 .button__block {
@@ -29,9 +34,9 @@
 }
 
 .button {
-    width: 52px;
-    height: 48px;
-    border-radius: 25%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 
 .up {
