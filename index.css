@@ -1,0 +1,73 @@
+/* div,h1, h2, h3, h4, p ,li, ul, img, section, article, main, header, body { 
+    outline-width: 1px; 
+    outline-style: solid; 
+    outline-color: red; 
+} */
+
+.body {
+    min-height: 100%;
+    min-width: 320px;
+    max-width: 768px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.canvas {
+    border: 1px solid rgb(78, 77, 77); 
+    position: relative;
+    margin: auto;
+
+}
+
+.info__block {
+    min-height: 3vh;
+}
+
+.button__block {
+    min-height: 240px;
+}
+
+.button {
+    width: 52px;
+    height: 48px;
+    border-radius: 25%;
+}
+
+.up {
+min-height: 80px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+.center {
+    min-height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bottom {
+    min-height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button__up {
+    margin-top: auto;
+}
+
+.button__down {
+
+}
+
+.button__left {
+
+}
+
+.button__right {
+
+}
