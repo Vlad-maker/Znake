@@ -1,8 +1,8 @@
-div,h1, h2, h3, h4, p ,li, ul, img, section, article, main, header, body { 
+/* div,h1, h2, h3, h4, p ,li, ul, img, section, article, main, header, body { 
     outline-width: 1px; 
     outline-style: solid; 
     outline-color: red; 
-}
+} */
 
 .body {
     min-height: 100%;
@@ -10,23 +10,26 @@ div,h1, h2, h3, h4, p ,li, ul, img, section, article, main, header, body {
     max-width: 768px;
     display: flex;
     flex-direction: column;
-
+    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    background-repeat: no-repeat;
 }
 
 .canvas {
     border: 1px solid rgb(78, 77, 77); 
     position: relative;
     margin: auto;
-
+    background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .info__block {
-    
 }
 
 .score {
-    min-height: 3vh;
+    min-height: 4vh;
     padding-left: 13vw;
+    padding-top: 3px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .button__block {
@@ -34,9 +37,11 @@ div,h1, h2, h3, h4, p ,li, ul, img, section, article, main, header, body {
 }
 
 .button {
-    width: 80px;
-    height: 80px;
+    width: 78px;
+    height: 78px;
     border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%);
 }
 
 .up {
