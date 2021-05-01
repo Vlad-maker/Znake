@@ -28,7 +28,7 @@ function getRandomInt(min, max) {
 
 function loop() {
     requestAnimationFrame(loop);
-    if (++count < 6) {
+    if (++count < 7) {
       return;
     }
     count = 0;
@@ -52,9 +52,9 @@ function loop() {
       snake.cells.pop();
     }
     
-    context.fillStyle = 'yellow';
+    context.fillStyle = 'lightgreen';
     context.fillRect(apple.x, apple.y, grid - 1, grid - 1);
-    context.fillStyle = 'purple';
+    context.fillStyle = 'skyblue';
     snake.cells.forEach(function (cell, index) {
       context.fillRect(cell.x, cell.y, grid - 1, grid - 1);
       if (cell.x === apple.x && cell.y === apple.y) {
@@ -72,7 +72,7 @@ function loop() {
           snake.maxCells = 4;
           snake.dx = grid;
           snake.dy = 0;
-
+          score.textContent = snake.maxCells * 3;
           apple.x = getRandomInt(0, 15) * grid;
           apple.y = getRandomInt(0, 15) * grid;
         }
