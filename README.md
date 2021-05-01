@@ -2,7 +2,7 @@
 [Try it here](https://vlad-maker.github.io/Znake/)  
 
 #### Feauter Updates
-[x] Design
-[x] Score
+- [x] Design
+- [x] Score
 
 
