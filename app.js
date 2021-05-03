@@ -1,5 +1,5 @@
-let canvas = document.getElementById('game');
-let context = canvas.getContext('2d');
+const canvas = document.getElementById('game');
+const context = canvas.getContext('2d');
 let grid = 20;
 let count = 0;
 let snake = {
@@ -17,10 +17,10 @@ let apple = {
 
 const score = document.querySelector(".info__block")
 
-let keyUp = document.querySelector('.button__up')
-let keyDown = document.querySelector('.button__down')
-let keyRight = document.querySelector('.button__right')
-let keyLeft = document.querySelector('.button__left')
+const keyUp = document.querySelector('.button__up')
+const keyDown = document.querySelector('.button__down')
+const keyRight = document.querySelector('.button__right')
+const keyLeft = document.querySelector('.button__left')
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max-min)) + min;
